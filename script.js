@@ -13,6 +13,8 @@ let discardPile = [
 ];
 
 let selectedCardIndex = null;
+let isPlayerTurn = true;
+
 
 
 let drawPile = [
@@ -106,6 +108,16 @@ function renderHands(){
         let topCard = discardPile[discardPile.length - 1];
         disc.appendChild(createCard(topCard, false));
     }
+    let turnIndicator = document.getElementById("turn-indicator");
+    turnIndicator.classList.remove("turn-indicator-player", "turn-indicator-ai");
+    if (isPlayerTurn) {
+      turnIndicator.classList.add("turn-indicator-player");
+      turnIndicator.innerText = "PLAYER";
+    } else {
+      turnIndicator.classList.add("turn-indicator-ai");
+      turnIndicator.innerText = "AI";
+}
+
 
 }
 document.getElementById("draw-pile").addEventListener("click", function() {
@@ -137,6 +149,7 @@ document.getElementById("play-btn").addEventListener("click", function(){
     playerHand.splice(selectedCardIndex, 1);
     discardPile.push(selectedCard);
     selectedCardIndex = null;
+    isPlayerTurn = false;
     renderHands();
     aiTurn();
   }else{
@@ -144,24 +157,36 @@ document.getElementById("play-btn").addEventListener("click", function(){
   }
 })
 
-function aiTurn(){
+function aiTurn() {
+  isPlayerTurn = false;
+  renderHands();
+  setTimeout(aiPlayMove, 5000);
+}
+
+function aiPlayMove() {
   let topCard = discardPile[discardPile.length - 1];
+  let played = false;
+
   for (let i = 0; i < aiHand.length; i++) {
     let card = aiHand[i];
     if (isValidPlay(card, topCard)) {
       aiHand.splice(i, 1);
       discardPile.push(card);
-      renderHands();
-      return;
+      played = true;
+      break;
     }
   }
 
-  if (drawPile.length > 0) {
-    let drawnCard = drawPile.pop();
-    aiHand.push(drawnCard);
-  } else {
-    alert("AI tried to draw but draw pile is empty!");
+  if (!played) {
+    if (drawPile.length > 0) {
+      let drawnCard = drawPile.pop();
+      aiHand.push(drawnCard);
+    } else {
+      alert("AI tried to draw but draw pile is empty!");
+    }
   }
+
+  isPlayerTurn = true;
   renderHands();
 }
 
