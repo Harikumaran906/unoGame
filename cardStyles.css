@@ -1,0 +1,54 @@
+.card {
+  width: 200px;
+  height: 300px;
+  border: 8px solid black;
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.symbol-small {
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  font-size: 50px;
+  text-align: center;
+  color: white;
+}
+
+.top {
+  top: 0;
+  left: 0;
+}
+
+.bottom {
+  bottom: 0;
+  right: 0;
+}
+
+.symbol-large {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 125px;
+  color: white;
+}
+
+/* Colors */
+.red {
+  background: linear-gradient(125deg,#2C3E50 0%, red 20%, #E74C3C 75%, #2C3E50 95%); 
+}
+.blue {
+  background: linear-gradient(125deg,#2C3E50 0%,blue 20%, #3498DB 75%, #2C3E50 100%); 
+}
+.green {
+  background: linear-gradient(125deg,#2C3E50 0%,green 20%, #27AE60 75%, #2C3E50 100%); 
+}
+.yellow {
+  background: linear-gradient(125deg,#2C3E50 0%,gold 20%, #F1C40F 75%, #2C3E50 100%); 
+}
+
+.wild {
+  background: linear-gradient(125deg,#2C3E50 0%,black 20%, black 75%, #2C3E50 100%);
+}

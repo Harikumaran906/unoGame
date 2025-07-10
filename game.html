@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&display=swap" 
+            rel="stylesheet">
+        <title>UNO game</title>
+    </head>
+    <body>
+        <main>
+            <div id="game-board">
+                <section class="hand overlap-hand" id="ai-hand">AI Hand</section>
+                <section id="center-area">
+                    <div class="pile" id="draw-pile">DRAW</div>
+                    <div class="pile" id="discard-pile">
+                        
+                    </div>
+                </section>
+                <section class="hand overlap-hand" id="player-hand">PLAYER Hand</section>
+                <aside id="controls">
+                    <button id="play-btn">Play Card</button>
+                    <button id="uno-btn">UNO!!!</button>
+                    <div id="turn-indicator"></div>
+                    
+                </aside>
+                <aside id="msg">
+                    <div id="msg-row">
+                        <div id="msg-area">messages</div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,206 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+:root{
+  --cardBackColor: #8B4513;
+}
+
+#game-board{
+  background-color: #55b880;
+  width: 100%;
+  height: auto;
+}
+
+#center-area{
+  display: flex;
+  justify-content: space-around;
+  width: 65%;
+  position: relative;
+  left: 50px;
+}
+.pile{
+  width: 150px;
+  height: 225px;
+  border: 8px solid black;
+  border-radius: 10px;
+    
+}
+#draw-pile{
+    background-color: var(--cardBackColor);
+}
+
+.card {
+  width: 150px;
+  height: 225px;
+  border: 8px solid black;
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 5%;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.5);
+  font-size: 40px;
+}
+
+.symbol-small {
+  position: absolute;
+  width: 20%;
+  height: 15%;
+  font-size: 0.8em;
+  text-align: center;
+  color: white;
+}
+
+.top {
+  top: 5%;
+  left: 5%;
+}
+
+.bottom {
+  bottom: 5%;
+  right: 5%;
+}
+
+.symbol-large {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5em;
+  color: white;
+}
+
+.red {
+  background: linear-gradient(125deg,#2C3E50 0%, red 20%, #E74C3C 75%, #2C3E50 95%); 
+}
+.blue {
+  background: linear-gradient(125deg,#2C3E50 0%,blue 20%, #3498DB 75%, #2C3E50 100%); 
+}
+.green {
+  background: linear-gradient(125deg,#2C3E50 0%,green 20%, #27AE60 75%, #2C3E50 100%); 
+}
+.yellow {
+  background: linear-gradient(125deg,#2C3E50 0%,gold 20%, #F1C40F 75%, #2C3E50 100%); 
+}
+
+.wild {
+  background: linear-gradient(125deg,#2C3E50 0%,black 20%, gray 75%, #2C3E50 100%);
+}
+
+#player-hand{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+
+#ai-hand {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+.overlap-hand .card {
+  margin-left: -110px; 
+  z-index: 1;
+  transition: transform 0.2s;
+}
+.overlap-hand .card:hover {
+  z-index: 10;
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+.overlap-hand .card.selected {
+  transform: translateY(-20px);
+  z-index: 20;
+  border-color: gold;
+}
+
+
+.ai {
+  background-color: var(--cardBackColor);
+  color: transparent;
+}
+
+#controls{
+  width: 20%;
+  padding: 20px;
+  background-color: #2C3E50;
+  height: 600px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: fixed;
+  top: 20px;
+  right: 10px;
+}
+
+#btn-row{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#turn-indicator{
+  width: 50px;
+  height: 50px;
+  border: 8px solid black;
+  border-radius: 100%;
+  background-color: red;
+}
+
+#msg{
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  width: 10%;
+  height: 200px;
+}
+
+#msg-area{
+  margin: auto;
+  width: 90%;
+  height: 500px;
+  border: 4px solid black;
+  background-color: white;
+  padding: 10px;
+}
+
+aside > button{
+  width: 200px;
+  height: 100px;
+  background-color: #16406a;
+  color: aliceblue;
+  border: 8px solid black;
+  border-radius: 15%;
+  border-style: outset;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 25px;
+}
+
+aside > button:hover{
+  background-color: #4080c1;
+  color: yellow;
+}
+
+aside > button:active{
+  border-style: inset;
+  background-color: #40c181;
+  color: red;
+  font-size: 20px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+.selected {
+   transform: translateY(-20px);
+   border: 4px solid yellow;
+   box-shadow: 0 0 10px gold;
+   cursor: pointer;
+}
+
