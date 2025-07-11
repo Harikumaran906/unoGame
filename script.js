@@ -15,7 +15,42 @@ let discardPile = [
 let selectedCardIndex = null;
 let isPlayerTurn = true;
 
-
+function createFullDeck(){
+  let orgDeck = [];
+  orgDeck.push(
+    {color: "wild", value: "+4"},
+    {color: "wild", value: "+4"},
+    {color: "wild", value: "wild"},
+    {color: "wild", value: "wild"},
+    {color: "red", value: 0},
+    {color: "blue", value: 0},
+    {color: "green", value: 0},
+    {color: "yellow", value: 0}
+  );
+  
+  for (let i = 1; i < 10; i++){
+    orgDeck.push(
+    {color: "red", value: i},
+    {color: "red", value: i},
+    {color: "blue", value: i},
+    {color: "blue", value: i},
+    {color: "green", value: i},
+    {color: "green", value: i},
+    {color: "yellow", value: i},
+    {color: "yellow", value: i}
+    );
+  };
+  let actions = ["skip", "reverse", "+2"];
+  for (let action of actions) {
+    orgDeck.push(
+      { color: "red", value: action }, { color: "red", value: action },
+      { color: "blue", value: action }, { color: "blue", value: action },
+      { color: "green", value: action }, { color: "green", value: action },
+      { color: "yellow", value: action }, { color: "yellow", value: action }
+    );
+  }
+  return orgDeck;
+}
 
 let drawPile = [
   { color: "yellow", value: 3 },
