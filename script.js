@@ -433,11 +433,3 @@ window.addEventListener('load', () => {
   });
 });
 
-// function startBGM() {
-//   let bgm = document.getElementById("bgm");
-//   bgm.volume = 0.5;
-//   bgm.loop = true;
-//   bgm.play().catch(() => {});
-// }
-
-// window.addEventListener('click', startBGM, { once: true });
