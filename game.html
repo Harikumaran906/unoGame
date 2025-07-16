@@ -8,19 +8,29 @@
         <title>UNO game</title>
     </head>
     <body>
+        <audio id="bgm" src="audio/gamebgm.mp3" loop></audio>
+        <audio id="cardsound" src="audio/cardsound.mp3"></audio>
+
         <main>
             <div id="game-board">
                 <section class="hand overlap-hand" id="ai-hand">AI Hand</section>
                 <section id="center-area">
-                    <div class="pile" id="draw-pile">DRAW</div>
+                    <div class="pile" id="draw-pile"></div>
                     <div class="pile" id="discard-pile">
                         
                     </div>
+                    <div id="wild-popup">
+                        <div class="popup-color" id="popup-red"></div>
+                        <div class="popup-color" id="popup-blue"></div>
+                        <div class="popup-color" id="popup-green"></div>
+                        <div class="popup-color" id="popup-yellow"></div>
+                    </div>
                 </section>
-                <section class="hand overlap-hand" id="player-hand">PLAYER Hand</section>
+                <section class="hand overlap-hand" id="player-hand"></section>
                 <aside id="controls">
                     <button id="play-btn">Play Card</button>
                     <button id="uno-btn">UNO!!!</button>
+                    <button id="pass-btn" style="display: none;">PASS</button>
                     <div id="turn-indicator"></div>
                     
                 </aside>

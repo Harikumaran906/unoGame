@@ -195,6 +195,7 @@ aside > button{
   border-style: outset;
   font-family: "Roboto Condensed", sans-serif;
   font-size: 25px;
+  transition: background-color 0.3s;
 }
 
 aside > button:hover{
@@ -220,3 +221,38 @@ aside > button:active{
    cursor: pointer;
 }
 
+#wild-popup{
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-left: 300px;
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.popup-color{
+  width: 20%;
+  height: 90%;
+  opacity: 50%;
+
+}
+
+.popup-color:hover{
+  opacity: 100%;
+}
+
+#popup-red{
+  background-color: red;
+}
+#popup-blue{
+  background-color: blue;
+}
+#popup-green{
+  background-color: green;
+}
+#popup-yellow{
+  background-color: yellow;
+}
