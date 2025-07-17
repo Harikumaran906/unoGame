@@ -245,3 +245,85 @@ aside > button:active{
 #popup-yellow{
   background-color: yellow;
 }
+
+@media (max-width: 768px) {
+  #game-board {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  #center-area {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    left: 0;
+  }
+
+  .pile {
+    width: 90px;
+    height: 135px;
+    border-width: 4px;
+  }
+
+  .card {
+    width: 90px;
+    height: 135px;
+    font-size: 20px;
+    border-width: 4px;
+    padding: 4px;
+  }
+
+  .symbol-small {
+    font-size: 10px;
+    width: 16px;
+    height: 12px;
+  }
+
+  .symbol-large {
+    font-size: 30px;
+  }
+
+  #player-hand,
+  #ai-hand {
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 10px;
+  }
+
+  #controls {
+    position: static;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  aside > button {
+    width: 120px;
+    height: 60px;
+    font-size: 16px;
+  }
+
+  #turn-indicator {
+    width: 60px;
+    height: 60px;
+    font-size: 14px;
+    padding: 15px 0;
+  }
+
+  #wild-popup {
+    width: 100vw;
+    height: 150px;
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .popup-color {
+    width: 22%;
+    height: 120px;
+  }
+}
