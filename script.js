@@ -5,17 +5,19 @@ let gameOver = false;
 let calledUNO = false;
 let passBtn = document.getElementById("pass-btn");
 
-let musicSetting = localStorage.getItem("music");
-let soundSetting = localStorage.getItem("sound");
+window.addEventListener('load', () => {
+  let musicSetting = localStorage.getItem("music");
+  let bgm = document.getElementById("bgm");
 
-let bgm = document.getElementById("bgm");
-let cardsound = document.getElementById("cardsound");
+  if (musicSetting === "music-off") {
+    bgm.pause();
+  } else {
+    bgm.play().catch(() => {
+      console.log("Autoplay might be blocked until user interacts.");
+    });
+  }
+});
 
-if (musicSetting === "music-off") {
-  bgm.pause();
-} else {
-  bgm.play();
-}
 
 function playCardSound() {
   if (soundSetting === "game-sound-off") return;
