@@ -1,0 +1,80 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #55b880;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+#btn-container{
+    position: fixed;
+    top: 25%;
+    left: 33%;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-btn {
+  padding: 10px 20px;
+  font-size: 50px;
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 50px;
+  cursor: pointer;
+  width: 400px;
+  height: 100px;
+  background-color: aqua;
+  color: black;
+  transition: background-color 0.3s;
+}
+
+.menu-btn:hover{
+    background-color: blue;
+    color: red;
+}
+
+#settings {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 2px solid rgb(44, 42, 42);
+  padding: 20px;
+  z-index: 100;
+}
+
+#settings fieldset {
+  margin-bottom: 15px;
+  border: 1px solid gray;
+  padding: 10px;
+}
+
+#settings legend {
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+#settings label {
+  display: block;
+  margin: 5px 0;
+}
+
+#save-btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#settings {
+  display: none;
+}

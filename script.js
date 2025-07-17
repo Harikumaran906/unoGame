@@ -12,13 +12,26 @@ passBtn.addEventListener("click", function() {
   renderHands();
 })
 
-function playCardSound() {
-  let sound = document.getElementById("cardsound");
-  sound.pause();
-  sound.currentTime = 0.5;
-  sound.playbackRate = 2;
-  sound.play();
+let musicSetting = localStorage.getItem("music");
+let soundSetting = localStorage.getItem("sound");
+
+let bgm = document.getElementById("bgm");
+let cardsound = document.getElementById("cardsound");
+
+if (musicSetting === "music-off") {
+  bgm.pause();
+} else {
+  bgm.play();
 }
+
+function playCardSound() {
+  if (soundSetting === "game-sound-off") return;
+  cardsound.pause();
+  cardsound.currentTime = 0.5;
+  cardsound.playbackRate = 2;
+  cardsound.play();
+}
+
 
 
 
@@ -431,5 +444,34 @@ window.addEventListener('load', () => {
   document.getElementById("bgm").play().catch(() => {
     console.log("Autoplay might be blocked until user interacts.");
   });
+});
+
+// Main menu scripts
+
+let settingsBtn = document.getElementById("settings-btn");
+let settingsPopup = document.getElementById("settings");
+let saveBtn = document.getElementById("save-btn");
+
+settingsBtn.addEventListener("click", function() {
+  settingsPopup.style.display = "block;"
+});
+
+saveBtn.addEventListener("click", function(e) {
+  const theme = document.querySelector('input[name="theme-choice"]:checked');
+  if (theme) {
+    localStorage.setItem("theme", theme.value);
+  }
+
+  const music = document.querySelector('input[name="music-choice"]:checked');
+  if (music) {
+    localStorage.setItem("music", music.value);
+  }
+
+  const sound = document.querySelector('input[name="game-sound-choice"]:checked');
+  if (sound) {
+    localStorage.setItem("sound", sound.value);
+  }
+
+  settingsPopup.style.display = "none";
 });
 

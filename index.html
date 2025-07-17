@@ -3,13 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="MenuStyles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&display=swap" 
+    rel="stylesheet">
   <title>UNO Game - Home</title>
 </head>
 <body>
-  <h1>Welcome to My UNO Game</h1>
-  <p>Click below to start playing:</p>
-  <a href="game.html">
-    <button>Start Game</button>
-  </a>
+  <h1>My UNO Game</h1>
+  <div id="btn-container">
+    <a href="game.html">
+      <button id="game-start" class="menu-btn">Start Game</button>
+    </a>
+    <button id="settings-btn" class="menu-btn">Settings</button>
+  </div>
+  <div id="settings" style="display: none;">
+    <form action="#" id="setting-form">
+      <fieldset id="theme">
+        <legend>Select Theme</legend>
+        <label for="day"><input type="radio" id="day" name="theme-choice" value="theme-day">Day</label>
+        <label for="night"><input type="radio" id="night" name="theme-choice" value="theme-night">Night</label>
+      </fieldset>
+      <fieldset id="music">
+        <label for="music-on"><input type="radio" id="music-on" name="music-choice" value="music-on">On</label>
+        <label for="music-off"><input type="radio" id="music-off" name="music-choice" value="music-off">Off</label>
+      </fieldset>
+      <fieldset id="sound">
+        <label for="game-sound-on"><input type="radio" id="game-sound-on" name="game-sound-choice" value="game-sound-on">On</label>
+        <label for="game-sound-off"><input type="radio" id="game-sound-off" name="game-sound-choice" value="game-sound-off">Off</label>
+      </fieldset>
+      <button id="save-btn" type="submit" name="save">Save Choices</button>
+    </form>
+  </div>
+  
+  <script src="script.js"></script>
 </body>
 </html>
