@@ -4,6 +4,8 @@ let isPlayerTurn = true;
 let gameOver = false;
 let calledUNO = false;
 let passBtn = document.getElementById("pass-btn");
+let soundSetting = localStorage.getItem("sound");
+
 
 window.addEventListener('load', () => {
   let musicSetting = localStorage.getItem("music");
@@ -441,9 +443,4 @@ passBtn.addEventListener("click", function() {
   renderHands();
 })
 
-window.addEventListener('load', () => {
-  document.getElementById("bgm").play().catch(() => {
-    console.log("Autoplay might be blocked until user interacts.");
-  });
-});
 
