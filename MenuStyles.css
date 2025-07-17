@@ -90,3 +90,46 @@ label:has(input[type="radio"]:checked) {
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  #btn-container {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .menu-btn {
+    width: 90%;
+    max-width: 300px;
+    height: 60px;
+    font-size: 20px;
+    margin: 10px 0;
+  }
+
+  #settings {
+    width: 90%;
+    max-width: 300px;
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  #settings fieldset {
+    padding: 8px;
+  }
+
+  #save-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+}

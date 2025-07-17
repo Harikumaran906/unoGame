@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open local democard.html",
-            "file": "C:\\Users\\Sriram\\OneDrive\\Desktop\\Code tutorials\\UNO\\index.html"
+            "file": "C:\\Users\\Sriram\\OneDrive\\Desktop\\Code tutorials\\UNO\\lose.html"
         }
 
     ]

@@ -45,12 +45,40 @@
       background-color: skyblue;
     }
   </style>
+  <style>
+  @media (max-width: 768px) {
+    #container {
+      padding: 20px;
+      width: 90%;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    a.button {
+      padding: 12px 20px;
+      font-size: 16px;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 10px 0;
+    }
+  }
+</style>
+
 </head>
 <body>
     <div id="container">
         <h1>Congratulations!</h1>
         <p>You won the UNO game!</p>
         <a href="game.html" class="button">Play Again</a>
+        <a href="index.html" class="button">Menu</a>
     </div>
     <audio id="victorySound" autoplay>
         <source src="audio/victory.mp3" type="audio/mpeg">
