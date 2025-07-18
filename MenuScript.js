@@ -7,6 +7,8 @@ settingsBtn.addEventListener("click", function () {
 });
 
 saveBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+
   const theme = document.querySelector('input[name="theme-choice"]:checked');
   if (theme) {
     localStorage.setItem("theme", theme.value);
@@ -24,3 +26,4 @@ saveBtn.addEventListener("click", function (e) {
 
   settingsPopup.style.display = "none";
 });
+

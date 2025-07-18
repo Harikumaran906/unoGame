@@ -6,7 +6,7 @@
 html, body {
   height: 100vh;
   overflow: hidden;
-  background-color: #55b880;
+  background-color: var(--bg-color);
 }
 
 :root{
@@ -14,7 +14,7 @@ html, body {
 }
 
 #game-board{
-  background-color: #55b880;
+  background-color: var(--bg-color);
   width: 1200px;
   height: 100vh;
 }
@@ -24,12 +24,11 @@ html, body {
   justify-content: space-around;
   width: 780px;
   position: relative;
-  left: 50px;
 }
 .pile{
   width: 150px;
   height: 225px;
-  border: 8px solid black;
+  border: 8px solid var(--card-border-color);
   border-radius: 10px;
     
 }
@@ -40,7 +39,7 @@ html, body {
 .card {
   width: 150px;
   height: 220px;
-  border: 8px solid black;
+  border: 8px solid var(--card-border-color);
   border-radius: 10px;
   position: relative;
   box-sizing: border-box;
@@ -133,7 +132,7 @@ html, body {
 #controls{
   width: 20%;
   padding: 20px;
-  background-color: #2C3E50;
+  background-color: var(--controls-bg);
   height: 600px;
   display: flex;
   justify-content: space-around;
@@ -155,7 +154,7 @@ html, body {
 #turn-indicator {
   width: 100px;
   height: 100px;
-  border: 8px solid black;
+  border: 8px solid var(--card-border-color);
   border-radius: 100%;
   padding: 25px 0;
   font-family: "Roboto Condensed", sans-serif;
@@ -214,7 +213,7 @@ aside > button:active{
   position: absolute;
   width: 1080px;
   height: 225px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--popup-bg);
   margin-left: 300px;
   display: none;
   flex-wrap: wrap;
@@ -272,7 +271,6 @@ aside > button:active{
     padding: 5px;
   }
 
-  #player-hand,
   #ai-hand {
     flex-wrap: wrap;
     justify-content: center;
@@ -280,6 +278,25 @@ aside > button:active{
     gap: 6px;
     margin-left: 30px;
     
+  }
+  #player-hand {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 10px;
+    padding-left: 40px;
+    gap: 0;
+    position: relative;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  #player-hand .card {
+    margin-left: -40px;
+  }
+
+  #player-hand .card:first-child {
+    margin-left: 0; /* First card always fully visible */
   }
 
   .card, .pile {
@@ -338,4 +355,20 @@ aside > button:active{
     width: 22%;
     height: 100px;
   }
+}
+
+
+
+.theme-day {
+  --bg-color: #55b880;
+  --card-border-color: black;
+  --controls-bg: #1a9a11;
+  --popup-bg: rgba(255, 255, 255, 0.5);
+}
+
+.theme-night {
+  --bg-color: #1e1e1e;
+  --card-border-color: #00ffff;
+  --controls-bg: #2C3E50;
+  --popup-bg: rgba(0, 0, 0, 0.5);
 }

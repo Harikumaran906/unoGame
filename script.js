@@ -6,6 +6,9 @@ let calledUNO = false;
 let passBtn = document.getElementById("pass-btn");
 let soundSetting = localStorage.getItem("sound");
 
+const theme = localStorage.getItem("theme") || "theme-day";
+document.body.classList.add(theme);
+
 
 window.addEventListener('load', () => {
   let musicSetting = localStorage.getItem("music");
@@ -89,8 +92,12 @@ function dealCards(shuffledDeck) {
     let c2 = shuffledDeck.pop();
     aiHand.push(c2); 
   }
-  topCard = shuffledDeck.pop();
+  do {
+    topCard = shuffledDeck.pop();
+  } while (topCard.color === "wild");
+
   discardPile.push(topCard);
+
 }
 
 
@@ -365,14 +372,18 @@ function hideWildPopup() {
 function selectWildColor(color) {
   discardPile[discardPile.length - 1].color = color;
   hideWildPopup();
-  for (let i = 0; i < 4; i++) {
-    if (drawPile.length === 0) refillDrawPile();
-    if (drawPile.length > 0) {
-      aiHand.push(drawPile.pop());
-    }
+
+  let card = discardPile[discardPile.length - 1];
+  let skipOpponent = processSpecialCard(card, true);
+  checkGameOver();
+
+  if (!gameOver && !skipOpponent) {
+    isPlayerTurn = false;
+    aiTurn();
+  } else {
+    isPlayerTurn = true;
+    renderHands();
   }
-  isPlayerTurn = true;
-  renderHands();
 }
 
 
@@ -405,6 +416,8 @@ function processSpecialCard(card, isPlayer) {
   }
   else if (card.value === "skip" || card.value === "reverse") {
     return true; 
+  }else if (card.value === "wild"){
+    return false;
   }
   return false;
 }
